@@ -1,0 +1,63 @@
+<section class="contact-form__section">
+  <div class="section color-scheme-1">
+    <div class="contact-form__container">
+      <form class="contact-form__form" method="POST" action="/contact">
+        <h1 class="h2">Contact</h1>
+        <!-- Name -->
+        <div class="contact-form__form-row">
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            autocomplete="fname"
+            placeholder="First name"
+            class="contact-form__input"
+          />
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            autocomplete="lname"
+            placeholder="Last name"
+            class="contact-form__input"
+          />
+        </div>
+        <!-- Contact info -->
+        <div class="contact-form__form-row">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            placeholder="Email adress"
+            class="contact-form__input"
+          />
+          <input
+            type="tel"
+            id="tel"
+            name="tel"
+            autocomplete="email"
+            placeholder="Phone number"
+            pattern="[0-9\-]*"
+            class="contact-form__input"
+          />
+        </div>
+        <!-- Message -->
+        <textarea
+          id="message"
+          name="message"
+          class="contact-form__input contact-form__input--textarea"
+          placeholder="Message"
+          rows="8"
+        ></textarea>
+        <!-- Submit -->
+        <input
+          class="btn btn-primary"
+          type="submit"
+          id="submit"
+          name="submit"
+        />
+      </form>
+    </div>
+  </div>
+</section>

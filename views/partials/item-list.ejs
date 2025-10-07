@@ -1,0 +1,102 @@
+<section class="item-list__section">
+  <div class="section color-scheme-1">
+    <div class="item-list__container">
+      <div class="item-list__alert <%= erreur ? '' : 'visually-hidden' %>">
+        <strong>Attention !</strong> Une erreur est survenu
+      </div>
+      <table class="item-list__table">
+        <thead class="item-list__thead">
+          <tr class="item-list__tr">
+            <th class="item-list__th">#</th>
+            <th class="item-list__th">DATE DE CRÉATION</th>
+            <th class="item-list__th">NOM</th>
+            <th class="item-list__th">PRIX</th>
+          </tr>
+        </thead>
+        <tbody class="item-list__tbody">
+          <% if (items && items.length) { %> <% items.forEach(function(item) {%>
+          <tr class="item-list__tr">
+            <td class="item-list__td"><%= item.id %></td>
+            <td class="item-list__td">
+              <%= item.date || (item.getDateOfCreation &&
+              item.getDateOfCreation()) %>
+            </td>
+            <td class="item-list__td"><%= item.nom || item.name %></td>
+            <td class="item-list__td"><%= item.prix %></td>
+          </tr>
+          <% }) } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="item-list-form__container">
+      <form class="item-list-form__form" method="POST" action="/">
+        <!-- Supprimer par ID -->
+        <div class="item-list-form__form-group">
+          <h3>Supprimer un item par ID</h3>
+          <input
+            type="text"
+            id="rmId"
+            name="rmId"
+            placeholder="#"
+            class="item-list-form__input"
+          />
+          <button
+            class="btn btn--small btn-primary"
+            type="submit"
+            name="action"
+            value="rmById"
+          >
+            Supprimer
+          </button>
+        </div>
+        <!-- Supprimer par Nom -->
+        <div class="item-list-form__form-group">
+          <h3>Supprimer un item par Nom</h3>
+          <input
+            type="text"
+            id="rmNom"
+            name="rmNom"
+            placeholder="Nom"
+            class="item-list-form__input"
+          />
+          <button
+            class="btn btn--small btn-primary"
+            type="submit"
+            name="action"
+            value="rmByName"
+          >
+            Supprimer
+          </button>
+        </div>
+        <!-- Ajouter -->
+        <div class="item-list-form__form-group">
+          <h3>Ajouter un item</h3>
+          <div class="item-list-form__form-row">
+            <input
+              type="text"
+              id="addNom"
+              name="addNom"
+              placeholder="Nom"
+              class="item-list-form__input"
+            />
+            <input
+              type="text"
+              id="addPrix"
+              name="addPrix"
+              placeholder="prix"
+              class="item-list-form__input"
+            />
+          </div>
+          <button
+            class="btn btn--small btn-primary"
+            type="submit"
+            name="action"
+            value="add"
+          >
+            Ajouter
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

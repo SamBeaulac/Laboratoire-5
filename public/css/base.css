@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  width: 100%;
+}
+
+.content-for-layout {
+  flex: 1 0 auto;
+}
+
+.page-width {
+  --page-content-max-width: 1440px;
+  --page-margin-width: 16px;
+}
+
+@media screen and (width >= 750px) {
+  .page-width {
+    --page-margin-width: 40px;
+  }
+}
+
+.section {
+  --page-grid-content-column: min(
+    var(--page-content-max-width),
+    100% - (var(--page-margin-width) * 2)
+  );
+
+  --page-grid-margin-column: minmax(var(--page-margin-width), 1fr);
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns:
+    var(--page-grid-margin-column)
+    var(--page-grid-content-column)
+    var(--page-grid-margin-column);
+}
+
+.section > * {
+  grid-column: 2;
+}
+
+.section:not(#header):not(#footer) {
+  padding: 100px 0;
+}
+
+.color-scheme-1 {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: white;
+  border-color: black;
+}
+
+.btn {
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+
+.btn--small {
+  padding: 0.5rem;
+}
+
+.btn--full-width {
+  width: 100%;
+}
+
+.color-scheme-1 .btn-primary {
+  display: block;
+  width: fit-content;
+  color: white;
+  background-color: black;
+}
+
+.color-scheme-1 .btn-secondary {
+  display: block;
+  color: inherit;
+  background-color: inherit;
+  border: 1px solid inherit;
+}
+
+.list-unstyled {
+  list-style: none;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.visually-hidden {
+  display: none;
+}
