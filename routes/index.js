@@ -1,6 +1,5 @@
 const express = require('express');
-const ItemList = require('../models/itemList');
-const itemList = new ItemList();
+const itemList = require('../models/itemListSingleton');
 
 const router = express.Router();
 
@@ -17,12 +16,27 @@ router.post('/', function(req, res) {
 
     let erreur = 0;
 
+    const client = req.app && req.app.locals && req.app.locals.mqttClient;
+
     if(action === 'rmById')
     {
         const rmId = parseInt(body.rmId, 10);
         if(!Number.isNaN(rmId))
         {
-            itemList.removeItemById(id);
+            itemList.removeItemById(rmId);
+
+            if(client) 
+            {
+                client.publish('ITEM/WEB/DELETE/ID', rmId.toString(), function(err) {
+                if(err)
+                {
+                    console.log(err);
+                }});
+            } 
+            else 
+            {
+                console.warn('MQTT client non disponible');
+            }
         }
         else
         {
@@ -36,6 +50,19 @@ router.post('/', function(req, res) {
         if(rmNom)
         {
             itemList.removeItemByName(rmNom);
+
+             if(client) 
+            {
+                client.publish('ITEM/WEB/DELETE/NAME', rmNom, function(err) {
+                if(err)
+                {
+                    console.log(err);
+                }});
+            } 
+            else 
+            {
+                console.warn('MQTT client non disponible');
+            }
         }
         else
         {
@@ -48,7 +75,24 @@ router.post('/', function(req, res) {
         const addPrix = parseFloat(body.addPrix);
         if(addNom)
         {
-            itemList.addItem(nextId++, addNom, addPrix);
+            itemList.addItem(nextId, addNom, addPrix);
+
+            if(client) 
+            {
+                const newItem = itemList.getLastItem();
+                const message = `${newItem.id}\n${newItem.date}\n${newItem.nom}\n${newItem.prix}`;
+                client.publish('ITEM/WEB/NEW', message, function(err) {
+                if(err)
+                {
+                    console.log(err);
+                }});
+            } 
+            else 
+            {
+                console.warn('MQTT client non disponible');
+            }
+
+            nextId++;
         }
         else
         {
