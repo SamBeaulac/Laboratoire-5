@@ -1,1 +1,29 @@
-404
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body class="page-width">
+    <%- include('../partials/header') %>
+    <main class="content-for-layout">
+      <div class="section color-scheme-1">
+        <div style="text-align: center; padding: 80px 20px">
+          <h1 style="font-size: 4rem; margin-bottom: 20px; color: #333">404</h1>
+          <h2 style="margin-bottom: 30px; color: #666">Page non trouvée</h2>
+          <p style="margin-bottom: 40px; color: #888">
+            La page que vous recherchez n'existe pas ou a été déplacée.
+          </p>
+          <a
+            class="btn btn--primary"
+            href="/"
+            style="display: inline-block; text-decoration: none"
+          >
+            Retour à l'accueil
+          </a>
+        </div>
+      </div>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

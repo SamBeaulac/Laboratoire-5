@@ -34,7 +34,7 @@
         <div class="item-list-form__form-group">
           <h3>Supprimer un item par ID</h3>
           <input
-            type="text"
+            type="number"
             id="rmId"
             name="rmId"
             placeholder="#"
@@ -80,10 +80,11 @@
               class="item-list-form__input"
             />
             <input
-              type="text"
+              type="number"
+              step="0.01"
               id="addPrix"
               name="addPrix"
-              placeholder="prix"
+              placeholder="Prix"
               class="item-list-form__input"
             />
           </div>
@@ -94,6 +95,42 @@
             value="add"
           >
             Ajouter
+          </button>
+        </div>
+        <!-- Modifier -->
+        <div class="item-list-form__form-group">
+          <h3>Modifier un item</h3>
+          <div class="item-list-form__form-row">
+            <input
+              type="text"
+              id="modId"
+              name="modId"
+              placeholder="#"
+              class="item-list-form__input"
+            />
+            <input
+              type="text"
+              id="modNom"
+              name="modNom"
+              placeholder="Nom"
+              class="item-list-form__input"
+            />
+            <input
+              type="number"
+              step="0.01"
+              id="modPrix"
+              name="modPrix"
+              placeholder="Prix"
+              class="item-list-form__input"
+            />
+          </div>
+          <button
+            class="btn btn--small btn-primary"
+            type="submit"
+            name="action"
+            value="mod"
+          >
+            Modifier
           </button>
         </div>
       </form>
