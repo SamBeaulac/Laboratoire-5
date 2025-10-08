@@ -1,3 +1,10 @@
+/*
+ * @file item.js
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Classe Item représentant un article avec ID, nom, prix et date de création
+ */
+
 class Item {
     constructor(id, nom, prix) {
         this.id = Number(id);

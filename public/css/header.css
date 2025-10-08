@@ -1,3 +1,10 @@
+/*
+ * @file header.css
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Styles pour l'en-tête et la navigation de l'application
+ */
+
 .header__section {
   position: relative;
   z-index: 10;

@@ -1,3 +1,10 @@
+/*
+ * @file base.css
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Styles de base et reset CSS pour l'application
+ */
+
 *,
 *::before,
 *::after {

@@ -1,3 +1,10 @@
+/*
+ * @file item-list.css
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Styles pour l'affichage et les formulaires de gestion des items
+ */
+
 .item-list__container {
   max-width: 40rem;
   margin: 0 auto;

@@ -1,3 +1,10 @@
+/*
+ * @file item-refresh.js
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Script client pour la mise à jour temps réel des items via Socket.IO
+ */
+
 $(document).ready(function() {
     if (typeof window.socket === 'undefined') {
         setTimeout(function() 

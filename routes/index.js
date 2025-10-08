@@ -1,3 +1,10 @@
+/*
+ * @file index.js
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Route principale avec gestion MQTT et Socket.IO pour la synchronisation des items
+ */
+
 const express = require('express');
 const itemList = require('../models/itemListSingleton');
 var mqtt = require('mqtt');

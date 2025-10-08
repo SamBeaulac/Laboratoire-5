@@ -1,3 +1,10 @@
+/*
+ * @file itemList.js
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Classe ItemList pour gérer une collection d'items avec méthodes CRUD
+ */
+
 const Item = require('./item');
 
 class ItemList {

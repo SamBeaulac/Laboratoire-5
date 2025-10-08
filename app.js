@@ -1,3 +1,10 @@
+/*
+ * @file app.js
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Serveur principal Express avec Socket.IO et configuration des routes
+ */
+
 const express = require('express');
 const path = require('path');
 const itemList = require('./models/itemListSingleton');
@@ -17,7 +24,6 @@ app.use(express.json())
 const server = http.createServer(app);
 const io = require('socket.io')(server);
 
-// Configurer les routes AVANT de les utiliser
 const indexRouter = require('./routes/index');
 indexRouter.setIo(io);
 

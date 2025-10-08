@@ -1,3 +1,10 @@
+/*
+ * @file contact.js
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Route pour la page de contact avec gestion du formulaire
+ */
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');

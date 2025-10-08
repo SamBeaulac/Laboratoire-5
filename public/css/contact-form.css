@@ -1,3 +1,10 @@
+/*
+ * @file contact-form.css
+ * @author Samuel
+ * @date 10/07/2025
+ * @brief Styles pour le formulaire de contact
+ */
+
 .contact-form__form {
   max-width: 40rem;
   margin: 0 auto;
